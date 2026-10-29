@@ -13,6 +13,7 @@ class PowerModule(cosmosis.ClassModule):
     # The execute method is exactly the same as the previous version
     def execute(self, block):
         coef  = block['power_module_coef', 'power_module_param']
+        #print(f"PowerModule: block['poly', 'y']={block['poly', 'y']}, coef={coef}, exponent={self.exponent}")
         block['poly', 'y'] = (block['poly', 'y']*coef) ** self.exponent
 
 # The parent class has a method called as_module which converts this to a module
