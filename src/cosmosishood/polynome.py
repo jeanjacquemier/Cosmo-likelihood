@@ -8,13 +8,14 @@ def setup(config: cosmosis.datablock):
     # In this class the options parameter has been trimmed to just be the options
     # specific to this module, so no funny 'cosmosis.options_section' is needed
     # when getting parameters
-    degree =  config.get_int("degree")
+    degree =  config.get_int(cosmosis.option_section, "degree")
     return {"degree": degree}
 
     
 def execute(sample: cosmosis.datablock, config: cosmosis.datablock):
     # The parameters it needs are the coefficients,
     # which we will name "p_0", "p_1", etc.
+
     degree = config['degree']
 
     coeffs = []
@@ -35,7 +36,7 @@ def execute(sample: cosmosis.datablock, config: cosmosis.datablock):
     # to use
     sample['poly', 'x'] = x
     sample['poly', 'y'] = y
-
+  
     # we return 0 to indicate that everything worked.
     return 0
 
