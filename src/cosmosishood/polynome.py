@@ -19,7 +19,6 @@ def execute(sample: cosmosis.datablock, config: cosmosis.datablock):
     degree = config['degree']
 
     coeffs = []
-    print(f"DEBUG block.sections(): {sample.keys()}")
     for i in range(degree+1):
         coef  = sample['coefficients', f'param_{i}']
         coeffs.append(coef)
